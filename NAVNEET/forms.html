@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Html</title>  
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+  }
+
+  h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  form > div {
+    margin-bottom: 18px;
+  }
+
+  label {
+    display: inline-block;
+    color: #303956;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]),
+  select,
+  textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d6ddef;
+    border-radius: 10px;
+    background: #f8faff;
+    font-family: inherit;
+    font-size: 14px;
+    color: #303956;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #9aa4bd;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.13);
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  /* Subscription Plan */
+  form p {
+    color: #303956;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    accent-color: #667eea;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  /* Radio labels */
+  form > div:has(input[type="radio"]) label {
+    margin-right: 12px;
+    font-weight: 500;
+  }
+
+  /* Terms and Conditions */
+  form > div:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  form > div:has(input[type="checkbox"]) label {
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+
+  /* Comments */
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  /* Submit Button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3182f6, #9639e8);
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  }
+
+  button[type="submit"]:active {
+    transform: scale(0.98);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 26px;
+    }
+
+    form {
+      padding: 22px 18px;
+    }
+  }
+</style>
+
+</head>
+<body>
+    <h1>FOrm in Html</h1>
+    <form action="/submit.php">
+      <div>
+        <label for="name">NAME</label>
+        <input id="name" name="text" placeholder="Enter Name" required />
+      </div>
+      <div>
+        <label for="ph">phone</label>
+        <input id="ph" type="tel" placeholder="Enter Phone" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter Email" required />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Password"
+          required
+          />
+        </div>
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input id="dob" type="date" placeholder="Date" required />
+      </div>
+      <!-- dropdown (select input)  for gender-->
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="" disabled selected>select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <div>
+          <p>Subscription Plan</p>
+          <input id="basic" type="radio" name="subscription" value="basic" />
+          <label for="basic">Basic</label>
+
+          <input id="premium" type="radio" name="subscription" value="premium" />
+          <label for="premium">Premium</label>
+
+          <input id="vip" type="radio" name="subscription" value="vip" />
+          <label for="vip">VIP</label>
+        </div>
+        <div>
+          <input id="terms" type="checkbox" required />
+          <label for="terms">I agree to the terms and conditions</label>
+        </div>
+        <div>
+          <label for="comments">Comments</label>
+          <textarea id="comments" placeholder="Enter your comments"rows="4"></textarea>
+
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+     </form>
+  </body>
+</html>

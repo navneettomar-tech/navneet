@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table in html</title>
+    <style>
+
+/* Basic page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* Main heading */
+h1 {
+  text-align: center;
+  color: #ff3b3b;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* Table styling */
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 20px rgba(255, 59, 59, 0.2);
+}
+
+/* Table heading */
+thead {
+  background-color: #e50914;
+  color: white;
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-size: 17px;
+}
+
+/* Table data */
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #383838;
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: #292929;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #3b2222;
+  transition: 0.3s;
+}
+
+/* Last row border */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}
+</style
+
+  </head>
+  <body>
+    <h1>table in html</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>sumit</td>
+          <td>Software Helper</td>
+          <td>$700</td>
+        </tr>
+        <tr>
+          <td>Navneet</td>
+          <td>Software developer</td>
+          <td>$700000</td>
+        </tr>
+        <tr>
+          <td>Krishna</td>
+          <td>house keping</td>
+          <td>$70</td>
+        </tr>
+        <tr>
+          <td>Omee</td>
+          <td>al ml web developer</td>
+          <td>$700000000</td>
+        </tr>
+        <tr>
+          <td>Thanks</td>
+          <td colspan="2">You</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

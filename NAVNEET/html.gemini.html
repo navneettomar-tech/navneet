@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Registration Form</title>
+    <!-- Load Tailwind CSS for modern utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom smooth scroll and background style */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        /* Custom focus transitions */
+        input:focus, select:focus, textarea:focus {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4 sm:p-6 md:p-10">
+
+    <!-- Form Container Card -->
+    <div class="w-full max-w-2xl bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 p-6 sm:p-10 my-8">
+        
+        <!-- Form Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">Create Account</h1>
+            <p class="text-gray-500 text-sm mt-2">Please fill in the details below to complete your registration.</p>
+        </div>
+
+        <form action="/submit.php" method="POST" class="space-y-6">
+            
+            <!-- Name Field -->
+            <div class="flex flex-col space-y-2">
+                <label for="Name" class="text-sm font-semibold text-gray-700">Full Name</label>
+                <input type="text" id="Name" name="name" placeholder="Enter Name" required
+                    class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm bg-gray-50/50">
+            </div>
+
+            <!-- Phone and Email Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex flex-col space-y-2">
+                    <label for="tel" class="text-sm font-semibold text-gray-700">Phone Number</label>
+                    <input type="tel" id="tel" name="phone" placeholder="Enter Phone" required
+                        class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm bg-gray-50/50">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="email" class="text-sm font-semibold text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required
+                        class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm bg-gray-50/50">
+                </div>
+            </div>
+
+            <!-- DOB and Password Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="flex flex-col space-y-2">
+                    <label for="date" class="text-sm font-semibold text-gray-700">Date Of Birth</label>
+                    <input type="date" id="date" name="dob" required
+                        class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 text-sm bg-gray-50/50">
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="password" class="text-sm font-semibold text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required
+                        class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm bg-gray-50/50">
+                </div>
+            </div>
+
+            <!-- Gender Selection -->
+            <div class="flex flex-col space-y-2">
+                <label for="gender" class="text-sm font-semibold text-gray-700">Gender</label>
+                <select id="gender" name="gender" required
+                    class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 text-sm bg-gray-50/50">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Subscription Plans (Radio Options) -->
+            <div class="pt-2">
+                <p class="text-sm font-semibold text-gray-700 mb-3">Choose Subscription Plan</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <label class="flex items-center space-x-3 p-3 rounded-xl border border-gray-200 hover:border-indigo-500 cursor-pointer transition bg-gray-50/30">
+                        <input type="radio" id="basic" name="subscription" value="Basic" class="text-indigo-600 focus:ring-indigo-500 h-4 w-4">
+                        <span class="text-sm font-medium text-gray-800">Basic</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 rounded-xl border border-gray-200 hover:border-indigo-500 cursor-pointer transition bg-gray-50/30">
+                        <input type="radio" id="premium" name="subscription" value="Premium" class="text-indigo-600 focus:ring-indigo-500 h-4 w-4">
+                        <span class="text-sm font-medium text-gray-800">Premium</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-3 rounded-xl border border-gray-200 hover:border-indigo-500 cursor-pointer transition bg-gray-50/30">
+                        <input type="radio" id="vip" name="subscription" value="VIP" class="text-indigo-600 focus:ring-indigo-500 h-4 w-4">
+                        <span class="text-sm font-medium text-gray-800">VIP</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Comments Textarea -->
+            <div class="flex flex-col space-y-2">
+                <label for="comments" class="text-sm font-semibold text-gray-700">Enter Comments</label>
+                <textarea name="comments" id="comments" placeholder="Enter Your Comments" rows="4" required
+                    class="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm bg-gray-50/50 resize-none"></textarea>
+            </div>
+
+            <!-- Terms and Conditions Checkbox -->
+            <div class="flex items-center space-x-3 pt-1">
+                <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-550 border-gray-300 rounded">
+                <label for="terms" class="text-sm text-gray-600">I agree to the <a href="#" class="text-indigo-600 hover:underline">terms and conditions</a></label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-4">
+                <button type="submit" 
+                    class="w-full py-3.5 px-6 rounded-xl text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transform active:scale-[0.98] transition-all duration-200 text-sm tracking-wide">
+                    Submit Form
+                </Wbutton>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

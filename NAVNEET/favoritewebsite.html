@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Favorite Website</title>
+    <style>
+      
+      /* Basic page styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Website background */
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #141e30, #243b55);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+      }
+
+      /* Heading styling */
+      h1 {
+        color: white;
+        font-size: 36px;
+        text-align: center;
+        text-shadow: 2px 2px 5px black;
+      }
+
+      /* Website links */
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background: #e63946;
+        padding: 14px 28px;
+        margin: 8px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+
+      /* Hover effect */
+      a:hover {
+        background: #ff6b6b;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Mobile screen styling */
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 28px;
+        }
+
+        a {
+          padding: 12px 20px;
+          font-size: 16px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Your favorite websites</h1>
+
+    <a href="https://google.com" target="_blank">Google</a>
+    <a href="https://www.youtube.com" target="_blank">youtube</a>
+    <a href="https://facebook.com" target="_blank">facebook</a>
+    <a href="https://linkedin.com" target="_blank">Linkedin</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </body>
+</html>
